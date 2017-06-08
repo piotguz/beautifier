@@ -1,14 +1,14 @@
-package org.beautifier.testng.html;
+package org.beautifier.testng.templated.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HTMLTestClass {
-	String name;
+public class TemplatedTestClass {
+	String name, duration;
 	int passedMethodsCount, failedMethodsCount, skippedMethodsCount;
-	List<HTMLTestMethod> methods = new ArrayList<>();
+	List<TemplatedTestMethod> methods = new ArrayList<>();
 	
-	public HTMLTestClass(String name) {
+	public TemplatedTestClass(String name) {
 		super();
 		this.name = name;
 	}
@@ -37,11 +37,11 @@ public class HTMLTestClass {
 		this.skippedMethodsCount = skippedMethodsCount;
 	}
 
-	public List<HTMLTestMethod> getMethods() {
+	public List<TemplatedTestMethod> getMethods() {
 		return methods;
 	}
 
-	public void setMethods(List<HTMLTestMethod> methods) {
+	public void setMethods(List<TemplatedTestMethod> methods) {
 		this.methods = methods;
 	}
 
@@ -51,6 +51,14 @@ public class HTMLTestClass {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
 	}
 	
 	

@@ -1,4 +1,4 @@
-package org.beautifier.testng.html;
+package org.beautifier.testng.templated.model;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class HTMLTemplateData {
+public class TemplateData {
 	String user, host, createdAt;
 	
-	List<HTMLSuite> suites = new ArrayList<>();
+	public List<TemplatedSuite> suites = new ArrayList<>();
 	
-	protected HTMLTemplateData() throws UnknownHostException {
+	public TemplateData() throws UnknownHostException {
 		super();
 		user = System.getProperty("user.name","unknown");
 		host = InetAddress.getLocalHost().getHostName();
@@ -20,11 +20,11 @@ public class HTMLTemplateData {
 		createdAt = format.format(new Date());
 	}
 
-	public List<HTMLSuite> getSuites() {
+	public List<TemplatedSuite> getSuites() {
 		return suites;
 	}
 
-	public void setSuites(List<HTMLSuite> suites) {
+	public void setSuites(List<TemplatedSuite> suites) {
 		this.suites = suites;
 	}
 

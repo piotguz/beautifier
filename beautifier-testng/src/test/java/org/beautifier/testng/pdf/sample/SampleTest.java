@@ -27,8 +27,9 @@ public class SampleTest {
 	}
 	
 	@Test
-	public void test1() {
+	public void test1() throws InterruptedException {
 		Reporter.log("Test1");
+		Thread.sleep(2000);
 		assertEquals("foobar", "foobar");
 	}
 	

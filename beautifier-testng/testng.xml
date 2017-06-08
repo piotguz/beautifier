@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Simple Reporter Suite">
 	<listeners>
-		<listener class-name="org.beautifier.testng.html.HTMLReporter" />
+		<listener class-name="org.beautifier.testng.templated.TemplatedReporter" />
 	</listeners>
 
 	<test name="Simple Reporter test #1">
