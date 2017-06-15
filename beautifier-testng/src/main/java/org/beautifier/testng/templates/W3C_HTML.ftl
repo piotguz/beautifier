@@ -19,12 +19,11 @@
   <#list suites as suite>
 	<article class="w3-container">
 		<h2>${suite.name}</h2>
-
 		<#list suite.tests as test>
-			<ul class="w3-ul">
-				<li><span class="w3-badge w3-red">${test.failedMethodsCount}</span> ${test.name}, duration: ${test.duration}</li>
+			<button onclick="myFunction('${test.name}')" class="w3-button w3-grey w3-block w3-left-align"><span class="w3-badge w3-red">${test.failedMethodsCount}</span> ${test.name}, duration: ${test.duration}</button>
+			<div id="${test.name}" class="w3-hide w3-container">
 				<#list test.methods as method>
-					<li style="padding-left:50px">
+					    <p>
 						<#if method.status == 'Failed'>
 							<i class="fa fa-exclamation-circle" style="color:red"></i>
 						<#elseif method.status == 'Passed'>
@@ -32,9 +31,9 @@
 						<#else>
 							<i class="fa fa-warning" style="color:orange"></i>
 						</#if>
-					${method.qName} </li>
+					${method.qName}</p>
 				</#list>
-			</ul>
+			</div>
 		</#list>
 	</article>
   </#list>
@@ -47,14 +46,15 @@
 	<p>Created by ${user}@${host} at ${createdAt}</p>
 </footer>
 <script>
-function myFunction() {
-    var x = document.getElementById("demo");
+function myFunction(id) {
+    var x = document.getElementById(id);
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
-    } else { 
+    } else {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
 </script>
 
 </body>

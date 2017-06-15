@@ -16,7 +16,7 @@ public class TemplateData {
 		super();
 		user = System.getProperty("user.name","unknown");
 		host = InetAddress.getLocalHost().getHostName();
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-DD-mm HH:mm:ss");
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		createdAt = format.format(new Date());
 	}
 
